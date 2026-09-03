@@ -1,6 +1,6 @@
 {
   "anthropic": {
-    "lastChecked": "2026-09-03T00:35:16.432Z",
+    "lastChecked": "2026-09-03T01:56:53.356Z",
     "seenUrls": {
       "https://www.anthropic.com/news/responsible-scaling-policy-v3": "2026-02-25T23:57:06.000Z",
       "https://www.anthropic.com/research/deprecation-updates-opus-3": "2026-02-25T20:58:11.000Z",
@@ -438,7 +438,7 @@
       "https://www.anthropic.com/news/tino-cuellar": "2026-08-04T17:40:15.000Z",
       "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards": "2026-08-24T15:42:06.000Z",
       "https://www.anthropic.com/research/riemann-zeta": "2026-08-13T23:32:23.000Z",
-      "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs": "2026-08-25T16:13:14.000Z",
+      "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs": "2026-09-02T15:29:47.000Z",
       "https://www.anthropic.com/research/multiagent-systems": "2026-08-27T15:38:32.000Z",
       "https://www.anthropic.com/news/claude-text-watermark": "2026-09-01T18:01:14.000Z",
       "https://www.anthropic.com/research/Claude-accelerates-protein-design": "2026-08-24T15:30:22.000Z",
@@ -449,11 +449,11 @@
       "https://www.anthropic.com/news/expanding-support-for-scientists": "2026-08-28T10:42:34.000Z",
       "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures": "2026-08-28T17:02:17.000Z",
       "https://www.anthropic.com/news/improving-alignment-security-efforts": "2026-09-01T12:43:20.000Z",
-      "https://www.anthropic.com/news/enterprise-frontier-safeguards": "2026-09-01T19:11:41.000Z"
+      "https://www.anthropic.com/news/enterprise-frontier-safeguards": "2026-09-02T19:11:21.000Z"
     }
   },
   "openai": {
-    "lastChecked": "2026-09-03T00:35:18.206Z",
+    "lastChecked": "2026-09-03T01:56:54.796Z",
     "seenUrls": {
       "https://openai.com/index/arvind-kc-chief-people-officer/": "2026-08-31T19:59:23.196Z",
       "https://openai.com/index/put-ai-to-work-for-your-product-team/": "2026-09-02T00:20:45.696Z",
@@ -1223,7 +1223,7 @@
       "https://openai.com/index/partnering-with-codeai/": "2026-09-02T14:23:38.307Z",
       "https://openai.com/index/pacing-model-development-cyber-capabilities/": "2026-09-02T14:23:40.461Z",
       "https://openai.com/index/chatgpt-for-teens/": "2026-09-02T15:04:09.972Z",
-      "https://openai.com/index/chatgpt-ads-expands-across-europe/": "2026-09-02T23:25:26.444Z",
+      "https://openai.com/index/chatgpt-ads-expands-across-europe/": "2026-09-03T00:49:42.873Z",
       "https://openai.com/index/offering-zero-data-retention-for-frontier-models/": "2026-09-02T14:23:41.717Z",
       "https://openai.com/index/gpt-5-6-in-kiro/": "2026-09-02T19:00:10.053Z",
       "https://openai.com/index/the-full-stack-behind-abundant-intelligence/": "2026-09-02T14:23:40.430Z",
@@ -1237,9 +1237,9 @@
       "https://openai.com/index/supporting-next-generation-ai-startups-thailand/": "2026-09-02T17:50:07.024Z",
       "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": "2026-09-02T19:00:08.140Z",
       "https://openai.com/signals/enterprise-data/": "2026-09-02T22:26:16.291Z",
-      "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": "2026-09-02T23:26:00.942Z",
-      "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": "2026-09-02T21:29:22.682Z",
-      "https://openai.com/index/path-to-astra/": "2026-09-02T20:51:02.300Z"
+      "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": "2026-09-03T00:40:02.198Z",
+      "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": "2026-09-03T01:51:46.534Z",
+      "https://openai.com/index/path-to-astra/": "2026-09-03T01:50:12.995Z"
     }
   }
 }
