@@ -53,6 +53,86 @@ function releaseSlot(): void {
 // LLM
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Health accounting
+//
+// Every caller of callLlm() degrades gracefully — a failed summary becomes a
+// "generation failed" notice, a failed translation falls back to English. That
+// is right per report and wrong for the run as a whole: on 2026-09-03 all ~30
+// calls failed, and the pipeline cheerfully published a digest of placeholders
+// and reported success. These counters let main() tell "one report is thin"
+// apart from "the provider was down", and abort in the second case.
+// ---------------------------------------------------------------------------
+
+export const llmStats = { attempted: 0, failed: 0 };
+
+/** Fraction of LLM calls that exhausted their retries. 0 when none were made. */
+export function llmFailureRatio(): number {
+  return llmStats.attempted === 0 ? 0 : llmStats.failed / llmStats.attempted;
+}
+
+/** Test seam — the counters are module state shared by the whole run. */
+export function resetLlmStats(): void {
+  llmStats.attempted = 0;
+  llmStats.failed = 0;
+}
+
+/**
+ * Fraction of failed calls above which the run is a total loss rather than a
+ * degraded one. Half is deliberately far from the noise floor: a bad-but-usable
+ * day loses one or two calls out of forty (~5%), an outage loses all of them.
+ */
+const LLM_ABORT_RATIO = 0.5;
+
+/**
+ * Below this many calls the ratio is meaningless — two failures out of three on
+ * a very quiet day must not kill a run that had almost nothing to summarize.
+ */
+const LLM_MIN_SAMPLES = 5;
+
+export function llmHealthLine(): string {
+  const { attempted, failed } = llmStats;
+  return `${failed}/${attempted} LLM calls failed (${Math.round(llmFailureRatio() * 100)}%)`;
+}
+
+/**
+ * Throw when the LLM provider is effectively down.
+ *
+ * Every individual call site degrades gracefully, so without this check a total
+ * outage still walks the whole pipeline: it writes placeholder reports, commits
+ * them, opens eight GitHub issues and pushes a Telegram message with no
+ * highlights — and exits 0, so nothing alerts. That is exactly what happened on
+ * 2026-09-03. Throwing makes `pnpm start` exit non-zero, which fails the job and
+ * skips the commit, notify and issue steps, so the day is simply missing rather
+ * than published wrong — and a manual re-dispatch can still fill it in.
+ */
+export function assertLlmHealthy(stage: string): void {
+  if (llmStats.attempted < LLM_MIN_SAMPLES) return;
+  if (llmFailureRatio() < LLM_ABORT_RATIO) return;
+  throw new Error(
+    `LLM provider appears to be down — ${llmHealthLine()} by the end of the ${stage} phase. ` +
+      `Aborting before anything is published; re-run this workflow once the provider recovers.`,
+  );
+}
+
+/**
+ * Log the final tally, and surface it on the Actions run page when calls were
+ * lost. A run below the abort ratio still publishes, but a report that quietly
+ * came back thin should not need a log dive to notice.
+ */
+export function reportLlmHealth(): void {
+  const line = llmHealthLine();
+  if (llmStats.failed === 0) {
+    console.log(`  [llm] ${line}`);
+    return;
+  }
+  console.warn(`  [llm] ${line} — some reports are degraded`);
+  const summaryPath = process.env["GITHUB_STEP_SUMMARY"];
+  if (summaryPath) {
+    fs.appendFileSync(summaryPath, `⚠️ **Degraded LLM output** — ${line}\n`, "utf-8");
+  }
+}
+
 /** A rate limit clears in seconds, so a short ladder is enough: 5 s, 10 s, 20 s. */
 const MAX_RETRIES_429 = 3;
 /**
@@ -119,6 +199,7 @@ export function isRetryable(err: unknown): boolean {
 }
 
 export async function callLlm(prompt: string, maxTokens = LLM_TOKENS_DEFAULT): Promise<string> {
+  llmStats.attempted++;
   for (let attempt = 0; ; attempt++) {
     await acquireSlot();
     let released = false;
@@ -136,6 +217,7 @@ export async function callLlm(prompt: string, maxTokens = LLM_TOKENS_DEFAULT): P
         await sleep(wait);
         continue;
       }
+      llmStats.failed++;
       throw err;
     } finally {
       if (!released) releaseSlot();

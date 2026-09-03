@@ -27,6 +27,12 @@ import {
   saveFile,
   autoGenFooter,
   parseLlmJson,
+  llmStats,
+  llmFailureRatio,
+  resetLlmStats,
+  llmHealthLine,
+  assertLlmHealthy,
+  reportLlmHealth,
 } from "../report.ts";
 
 // ---------------------------------------------------------------------------
@@ -253,6 +259,7 @@ describe("callLlm", () => {
   beforeEach(() => {
     vi.useFakeTimers();
     mockCall.mockReset();
+    resetLlmStats();
   });
 
   afterEach(() => {
@@ -406,6 +413,61 @@ describe("callLlm", () => {
 });
 
 // ---------------------------------------------------------------------------
+// llmStats / llmFailureRatio
+// ---------------------------------------------------------------------------
+
+describe("llm health accounting", () => {
+  beforeEach(() => {
+    vi.useFakeTimers();
+    mockCall.mockReset();
+    resetLlmStats();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("starts at zero and reports a 0 ratio with no samples", () => {
+    expect(llmStats).toEqual({ attempted: 0, failed: 0 });
+    expect(llmFailureRatio()).toBe(0);
+  });
+
+  it("counts one attempt per callLlm, not per retry", async () => {
+    const err429 = Object.assign(new Error("rate limited"), { status: 429 });
+    mockCall.mockRejectedValueOnce(err429).mockResolvedValueOnce("ok");
+
+    const promise = callLlm("prompt");
+    await vi.advanceTimersByTimeAsync(5_000);
+    await promise;
+
+    expect(llmStats).toEqual({ attempted: 1, failed: 0 });
+    expect(llmFailureRatio()).toBe(0);
+  });
+
+  it("counts a failure only once the retries are exhausted", async () => {
+    mockCall.mockRejectedValueOnce(new Error("bad request"));
+    mockCall.mockResolvedValueOnce("ok");
+
+    await expect(callLlm("a")).rejects.toThrow("bad request");
+    await callLlm("b");
+
+    expect(llmStats).toEqual({ attempted: 2, failed: 1 });
+    expect(llmFailureRatio()).toBe(0.5);
+  });
+
+  it("counts failures swallowed by translateToZh", async () => {
+    // translateToZh falls back to English rather than rethrowing, so without
+    // accounting inside callLlm a translation outage would leave no trace.
+    vi.spyOn(console, "error").mockImplementation(() => {});
+    mockCall.mockRejectedValueOnce(new Error("nope"));
+
+    expect(await translateToZh("English body")).toBe("English body");
+    expect(llmStats).toEqual({ attempted: 1, failed: 1 });
+    expect(llmFailureRatio()).toBe(1);
+  });
+});
+
+// ---------------------------------------------------------------------------
 // translateToZh
 // ---------------------------------------------------------------------------
 
@@ -441,5 +503,122 @@ describe("translateToZh", () => {
     mockCall.mockRejectedValue(new Error("boom"));
     const out = await translateToZh("English body");
     expect(out).toBe("English body");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// assertLlmHealthy / reportLlmHealth
+// ---------------------------------------------------------------------------
+
+describe("assertLlmHealthy", () => {
+  beforeEach(() => {
+    resetLlmStats();
+  });
+
+  const record = (attempted: number, failed: number) => {
+    llmStats.attempted = attempted;
+    llmStats.failed = failed;
+  };
+
+  it("passes when nothing has been attempted", () => {
+    expect(() => assertLlmHealthy("summary")).not.toThrow();
+  });
+
+  it("passes below the minimum sample size even at 100% failure", () => {
+    // A very quiet day may make only a handful of calls; 2/4 must not kill it.
+    record(4, 4);
+    expect(() => assertLlmHealthy("summary")).not.toThrow();
+  });
+
+  it("passes at the ordinary noise floor", () => {
+    record(40, 2);
+    expect(() => assertLlmHealthy("summary")).not.toThrow();
+  });
+
+  it("passes just under the abort ratio", () => {
+    record(10, 4);
+    expect(() => assertLlmHealthy("summary")).not.toThrow();
+  });
+
+  it("throws at the abort ratio", () => {
+    record(10, 5);
+    expect(() => assertLlmHealthy("summary")).toThrow(/appears to be down/);
+  });
+
+  it("throws on the 2026-09-03 shape — every call lost", () => {
+    record(30, 30);
+    expect(() => assertLlmHealthy("summary")).toThrow(/30\/30 LLM calls failed \(100%\)/);
+  });
+
+  it("names the stage that tripped it", () => {
+    record(10, 10);
+    expect(() => assertLlmHealthy("report")).toThrow(/end of the report phase/);
+  });
+});
+
+describe("reportLlmHealth", () => {
+  const originalSummary = process.env["GITHUB_STEP_SUMMARY"];
+
+  beforeEach(() => {
+    resetLlmStats();
+    delete process.env["GITHUB_STEP_SUMMARY"];
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    if (originalSummary !== undefined) process.env["GITHUB_STEP_SUMMARY"] = originalSummary;
+    else delete process.env["GITHUB_STEP_SUMMARY"];
+  });
+
+  it("does not write a step summary on a clean run", () => {
+    llmStats.attempted = 40;
+    const append = vi.spyOn(fs, "appendFileSync").mockReturnValue(undefined);
+    vi.spyOn(console, "log").mockImplementation(() => {});
+    process.env["GITHUB_STEP_SUMMARY"] = "/tmp/step-summary";
+
+    reportLlmHealth();
+
+    expect(append).not.toHaveBeenCalled();
+  });
+
+  it("appends a warning to the Actions step summary when calls were lost", () => {
+    llmStats.attempted = 40;
+    llmStats.failed = 3;
+    const append = vi.spyOn(fs, "appendFileSync").mockReturnValue(undefined);
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+    process.env["GITHUB_STEP_SUMMARY"] = "/tmp/step-summary";
+
+    reportLlmHealth();
+
+    expect(append).toHaveBeenCalledWith(
+      "/tmp/step-summary",
+      expect.stringContaining("3/40 LLM calls failed (8%)"),
+      "utf-8",
+    );
+  });
+
+  it("stays silent outside Actions", () => {
+    llmStats.attempted = 40;
+    llmStats.failed = 3;
+    const append = vi.spyOn(fs, "appendFileSync").mockReturnValue(undefined);
+    vi.spyOn(console, "warn").mockImplementation(() => {});
+
+    reportLlmHealth();
+
+    expect(append).not.toHaveBeenCalled();
+  });
+});
+
+describe("llmHealthLine", () => {
+  it("reports zero cleanly", () => {
+    resetLlmStats();
+    expect(llmHealthLine()).toBe("0/0 LLM calls failed (0%)");
+  });
+
+  it("rounds the percentage", () => {
+    resetLlmStats();
+    llmStats.attempted = 3;
+    llmStats.failed = 1;
+    expect(llmHealthLine()).toBe("1/3 LLM calls failed (33%)");
   });
 });

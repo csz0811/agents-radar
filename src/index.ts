@@ -39,6 +39,9 @@ import {
   saveFile,
   autoGenFooter,
   LLM_TOKENS_TRENDING,
+  assertLlmHealthy,
+  reportLlmHealth,
+  llmHealthLine,
 } from "./report.ts";
 import {
   buildCliReportContent,
@@ -442,6 +445,10 @@ async function main(): Promise<void> {
   console.log("  Translating summaries (EN -> ZH)...");
   const zhSummaries = await translateSummaries(enSummaries);
 
+  // First gate: ~40 calls have run by now, enough to tell an outage from a
+  // flaky report. Bailing here costs nothing — no file has been written yet.
+  assertLlmHealthy("summary");
+
   // 3. Generate cross-repo comparisons in English, then translate
   console.log("  Calling LLM for comparative analyses (EN)...");
   const summariesByLang: Record<Lang, Summaries> = { zh: zhSummaries, en: enSummaries };
@@ -560,6 +567,12 @@ async function main(): Promise<void> {
     ...(isHfWeek ? [saveHfReport(hfData, utcStr, dateStr, digestRepo)] : []),
   ]);
 
+  // Second gate: an outage that starts *after* the first gate would otherwise
+  // sail straight through — the savers each swallow their own failure and just
+  // skip a report. Files are on disk by now, but the failing exit skips the
+  // commit step, so they are never published.
+  assertLlmHealthy("report");
+
   // 5. Generate highlights for Telegram notification
   const readReport = (name: string): string | undefined => {
     const p = path.join("digests", dateStr, name);
@@ -655,10 +668,14 @@ async function main(): Promise<void> {
     }
   }
 
+  reportLlmHealth();
   console.log("Done!");
 }
 
 main().catch((err) => {
   console.error(err);
+  // The tally is the first thing worth seeing when a run dies — it separates
+  // "the provider was unreachable" from a genuine bug in the pipeline.
+  console.error(`  [llm] ${llmHealthLine()}`);
   process.exit(1);
 });
