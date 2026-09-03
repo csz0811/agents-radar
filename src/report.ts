@@ -53,8 +53,23 @@ function releaseSlot(): void {
 // LLM
 // ---------------------------------------------------------------------------
 
-const MAX_RETRIES = 3;
-const RETRY_BASE_MS = 5_000; // 5 s, 10 s, 20 s
+/** A rate limit clears in seconds, so a short ladder is enough: 5 s, 10 s, 20 s. */
+const MAX_RETRIES_429 = 3;
+/**
+ * Connection failures get a much longer ladder than 429s. A rate limit is the
+ * provider pushing back on *us*; an unreachable endpoint is a network outage
+ * that lasts minutes and clears on its own.
+ *
+ * On 2026-09-03 the DashScope cn-beijing endpoint was unreachable from the
+ * GitHub runner for the entire LLM phase (00:36–00:40 UTC). Every one of the
+ * ~30 calls burned its 5+10+20 s ladder inside the first 35 s, gave up, and the
+ * run published a digest built entirely out of "generation failed" placeholders.
+ * Six retries capped at 60 s cover ~3 min of outage instead of 35 s.
+ */
+const MAX_RETRIES_CONNECTION = 6;
+const RETRY_BASE_MS = 5_000;
+/** Backoff cap. Uncapped, attempt 6 would sleep 160 s and blow the job timeout. */
+const RETRY_MAX_MS = 60_000; // ladder: 5, 10, 20, 40, 60, 60 -> 195 s of cover
 
 export function is429(err: unknown): boolean {
   return (err as { status?: number })?.status === 429 || String(err).includes("429");
@@ -110,12 +125,14 @@ export async function callLlm(prompt: string, maxTokens = LLM_TOKENS_DEFAULT): P
     try {
       return await provider.call(prompt, maxTokens);
     } catch (err) {
-      if (attempt < MAX_RETRIES && isRetryable(err)) {
+      const rateLimited = is429(err);
+      const maxRetries = rateLimited ? MAX_RETRIES_429 : MAX_RETRIES_CONNECTION;
+      if (attempt < maxRetries && isRetryable(err)) {
         releaseSlot();
         released = true;
-        const wait = RETRY_BASE_MS * 2 ** attempt;
-        const reason = is429(err) ? "429" : "connection error";
-        console.error(`[llm] ${reason} — retry ${attempt + 1}/${MAX_RETRIES} in ${wait / 1000}s...`);
+        const wait = Math.min(RETRY_BASE_MS * 2 ** attempt, RETRY_MAX_MS);
+        const reason = rateLimited ? "429" : "connection error";
+        console.error(`[llm] ${reason} — retry ${attempt + 1}/${maxRetries} in ${wait / 1000}s...`);
         await sleep(wait);
         continue;
       }

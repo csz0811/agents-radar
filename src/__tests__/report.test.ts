@@ -350,6 +350,59 @@ describe("callLlm", () => {
     const results = await Promise.all(batch);
     expect(results).toEqual(["ok", "ok", "ok", "ok", "ok"]);
   });
+
+  it("gives a connection error a longer ladder than a 429", async () => {
+    // The 2026-09-03 outage lasted ~4 min; the old shared 3-retry ladder gave
+    // up after 35 s. Connection failures now get 6 retries capped at 60 s.
+    const connErr = Object.assign(new Error("Connection error."), { name: "APIConnectionError" });
+    mockCall.mockRejectedValue(connErr);
+
+    const promise = callLlm("prompt");
+    promise.catch(() => {});
+
+    for (const ms of [5_000, 10_000, 20_000, 40_000, 60_000, 60_000]) {
+      await vi.advanceTimersByTimeAsync(ms);
+    }
+
+    await expect(promise).rejects.toThrow("Connection error.");
+    // 1 initial + 6 retries
+    expect(mockCall).toHaveBeenCalledTimes(7);
+  });
+
+  it("caps the connection backoff at 60 s instead of doubling to 160 s", async () => {
+    const connErr = Object.assign(new Error("Connection error."), { name: "APIConnectionError" });
+    mockCall.mockRejectedValue(connErr);
+    mockCall.mockRejectedValueOnce(connErr).mockRejectedValueOnce(connErr);
+
+    const promise = callLlm("prompt");
+    promise.catch(() => {});
+
+    // Walk to the 6th backoff. Uncapped it would be 5 * 2**5 = 160 s; capped it
+    // fires at 60 s, so the 7th attempt must already have happened by then.
+    for (const ms of [5_000, 10_000, 20_000, 40_000, 60_000]) {
+      await vi.advanceTimersByTimeAsync(ms);
+    }
+    expect(mockCall).toHaveBeenCalledTimes(6);
+    await vi.advanceTimersByTimeAsync(60_000);
+    expect(mockCall).toHaveBeenCalledTimes(7);
+
+    await expect(promise).rejects.toThrow();
+  });
+
+  it("keeps the 429 ladder at 3 retries", async () => {
+    const err429 = Object.assign(new Error("rate limited"), { status: 429 });
+    mockCall.mockRejectedValue(err429);
+
+    const promise = callLlm("prompt");
+    promise.catch(() => {});
+
+    for (const ms of [5_000, 10_000, 20_000, 60_000]) {
+      await vi.advanceTimersByTimeAsync(ms);
+    }
+
+    await expect(promise).rejects.toThrow("rate limited");
+    expect(mockCall).toHaveBeenCalledTimes(4);
+  });
 });
 
 // ---------------------------------------------------------------------------
