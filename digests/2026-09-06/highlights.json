@@ -1,0 +1,102 @@
+{
+  "zh": {
+    "ai-cli": [
+      "Astra 修复已覆盖 Copilot、Codex、Pi、OpenCode",
+      "社区焦点转向可靠性，而非模型访问",
+      "会话阻塞与静默模型切换主导讨论",
+      "Codex 向实时语音运行时迈进",
+      "Qwen Code 新增守护式会话管理",
+      "MCP/ACP 协议加固扩展到 CLI 工具"
+    ],
+    "ai-agents": [
+      "OpenClaw 发布 v2026.9.2，聊天更快",
+      "24 小时内更新 500 个 issue 和 500 个 PR",
+      "合并 203 个 PR，关闭 65 个 issue",
+      "v2026.9.2 将持久化历史移出网关循环",
+      "ClawSweeper 分类排查会话状态和认证缺陷",
+      "维护者审查流水线紧张但仍然活跃"
+    ],
+    "ai-infra": [
+      "SGLang 权重缓存守护进程将加载降至 1 秒以下",
+      "vLLM 与 SGLang 存在静默损坏的 token 循环缺陷",
+      "SGLang Kimi-K3 出现跨提示词推理泄露",
+      "SGLang v0.5.19 发布，重启经济性占优",
+      "llama.cpp 24 小时内发布三个补丁版本",
+      "vLLM v0.28.0 被报告存在主机内存回退"
+    ],
+    "ai-trending": [
+      "Agent Skills 与 harness 工具主导 GitHub 趋势",
+      "Ollama 仍是默认本地运行时，拥有 180k 星标",
+      "Magnitude 将本地推理接入 Claude Code 和 Pi",
+      "Firecrawl 以 176,885 星登上热门",
+      "上下文工程作为独立 AI 类别兴起",
+      "本地推理作为编程智能体的插件层日益成熟"
+    ],
+    "ai-hn": [
+      "GPT-6 Astra 讨论串获得 2,034 条评论",
+      "Claude Fable/Mythos 5.1 拆分模型产品线",
+      "Gemini 3.8 Flash 评论数也超过 1,100",
+      "将 LLM 视为认知病毒的论文引发争论",
+      "Anthropic 在 Lean 4 中形式化费马大定理",
+      "collusion.wiki 的 OpenAI 智能体看板获 2,063 分"
+    ],
+    "ai-community": [
+      "社区焦点：AI 智能体在生产环境中的失败",
+      "低成本的 44% ARC-AGI-1 运行引发 Lobste.rs 讨论",
+      "美国政府在 NYT 版权案中支持 OpenAI",
+      "四个 AI 模型三次批准同一个安全漏洞",
+      "Hossein Hezami 系列讲述生产环境中的智能体失败",
+      "12 岁少年在编程马拉松零提交后构建平台"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Astra fixes shipped across Copilot, Codex, Pi, OpenCode",
+      "Community focus shifts to reliability over model access",
+      "Session wedges and silent model switches dominate threads",
+      "Codex moves toward realtime voice runtime",
+      "Qwen Code adds daemon-style session management",
+      "MCP/ACP protocol hardening spreads across CLI tools"
+    ],
+    "ai-agents": [
+      "OpenClaw ships v2026.9.2 with faster chat",
+      "500 issues and 500 PRs updated in 24h",
+      "203 PRs merged and 65 issues closed",
+      "v2026.9.2 moves durable history off Gateway loop",
+      "ClawSweeper triages session-state and auth bugs",
+      "Maintainer review pipeline strained but active"
+    ],
+    "ai-infra": [
+      "SGLang Weight Cache Daemon cuts load to under 1s",
+      "vLLM and SGLang have silent-corruption token-loop bugs",
+      "SGLang Kimi-K3 cross-prompt reasoning leak reported",
+      "SGLang v0.5.19 ships with restart-economics win",
+      "llama.cpp ships three patch releases in 24h",
+      "vLLM v0.28.0 faces host-memory regression reports"
+    ],
+    "ai-trending": [
+      "Agent Skills and harness tooling dominate GitHub trending",
+      "Ollama remains default local runtime at 180k stars",
+      "Magnitude plugs local inference into Claude Code and Pi",
+      "Firecrawl trending with 176,885 stars",
+      "Context engineering emerges as distinct AI category",
+      "Local inference hardens as plug-in layer for coding agents"
+    ],
+    "ai-hn": [
+      "GPT-6 Astra thread draws 2,034 comments",
+      "Claude Fable/Mythos 5.1 split model line",
+      "Gemini 3.8 Flash also clears 1,100 comments",
+      "LLMs as Cognitive Virus paper sparks debate",
+      "Anthropic formalizes Fermat's Last Theorem in Lean 4",
+      "collusion.wiki OpenAI agent board hits 2,063 points"
+    ],
+    "ai-community": [
+      "Community focus: AI agents fail in production",
+      "Cheap 44% ARC-AGI-1 run sparks Lobste.rs talk",
+      "US government backs OpenAI in NYT copyright case",
+      "Four AI models approved a security hole three times",
+      "Hossein Hezami series covers production agent failures",
+      "12-year-old builds platform after code jam got zero submissions"
+    ]
+  }
+}
