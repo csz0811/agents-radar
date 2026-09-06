@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "多智能体工作流现为CLI默认模式",
+      "Windows支持仍是CLI智能体的最弱项",
+      "MCP正成为通用智能体连接器",
+      "CLI工具扩展至桌面应用和浏览器外壳",
+      "令牌消耗失控几乎影响所有CLI智能体",
+      "Pi和OpenCode是厂商无关的集成层"
+    ],
+    "ai-agents": [
+      "OpenClaw 24小时内收到500个issue和500个PR",
+      "OpenClaw无新版本，预计很快发布补丁",
+      "2026.8.x至2026.9.x更新通道遭遇回归",
+      "Windows网关启动失败和重启级联",
+      "维护者合并了WebSocket传输修复#140490",
+      "问题发现速度超出维护者处理能力"
+    ],
+    "ai-infra": [
+      "llama.cpp发布了b10821至b10828七个构建",
+      "LiteLLM更新至v1.100.0和v1.101.0-rc.1",
+      "Ollama在24小时内推进至v0.34.0-rc1",
+      "静默正确性破坏影响量化稀疏/混合模型",
+      "前缀缓存对稀疏/混合注意力非几何安全",
+      "vLLM和SGLang未发布新版本，专注可靠性"
+    ],
+    "ai-trending": [
+      "智能体技能主导；mattpocock/skills获+2,206",
+      "affaan-m/ECC技能系统今日攀升+1,486",
+      "magnitudedev/magnitude推理服务器获+604",
+      "Ollama以180,304星稳固本地优先AI",
+      "技能目录和.agents目录正在加速",
+      "垂直AI应用在金融和研究领域加速"
+    ],
+    "ai-web": [
+      "Anthropic本次抓取未发布新文章",
+      "OpenAI发布了5条内容但仅2个唯一URL",
+      "两条OpenAI内容仅含元数据，内容未经确认",
+      "OpenAI的URL为“An Alien Mind”和“Research Acceleration”",
+      "未捕获Anthropic研究、工程或产品新闻",
+      "两者均未捕获安全、政策或技术文档"
+    ],
+    "ai-hn": [
+      "GPT-6 Astra帖以2,246分位居评论榜首",
+      "Collusion.wiki报告称OpenAI智能体留言板",
+      "Claude Fable/Mythos 5.1引发实际进展辩论",
+      "Gemini 3.8 Flash和Cyber发布得分1,157",
+      "社区情绪：炒作疲劳与安全怀疑",
+      "关于工程师失去实操技能的辩论"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B生态主导本周趋势",
+      "Unsloth的Qwen GGUF下载量突破10,311,462",
+      "智谱AI的GLM-5.3周获1,734赞",
+      "消除审查与拒绝机制的Qwen变体走红",
+      "MiniMax-H3和Lightricks LTX-2.5达到下载里程碑",
+      "经典GPT-2仍以1,460万下载量为基线"
+    ],
+    "ai-community": [
+      "Dev.to关注生产信任而非原始能力",
+      "开发者移除LangChain并删除向量数据库",
+      "Lobste.rs突出67美分ARC-AGI结果",
+      "美国政府支持OpenAI在NYT版权案中的立场",
+      "智能体需要RBAC、记忆、可观测性和人工审核",
+      "OSS开发日志删除18万行同时追踪套接字泄漏"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Multi-agent workflows are now the default CLI model",
+      "Windows support remains the weakest spot for CLI agents",
+      "MCP is emerging as the universal agent connector",
+      "CLI tools expand into desktop apps and browser shells",
+      "Runaway token consumption hits almost every CLI agent",
+      "Pi and OpenCode are provider-agnostic integration layers"
+    ],
+    "ai-agents": [
+      "OpenClaw saw 500 issues and 500 PRs in 24 hours",
+      "Zero new OpenClaw releases; patch cut expected soon",
+      "Regressions hit 2026.8.x to 2026.9.x update train",
+      "Windows gateway startup failures and restart cascades",
+      "Maintainers merged WebSocket transport fix #140490",
+      "Issue discovery is outpacing maintainer bandwidth"
+    ],
+    "ai-infra": [
+      "llama.cpp shipped seven builds from b10821 to b10828",
+      "LiteLLM moved to v1.100.0 and v1.101.0-rc.1",
+      "Ollama advanced v0.34.0-rc1 in the 24-hour window",
+      "Silent correctness breaks hit quantized sparse/hybrid models",
+      "Prefix caches not geometry-safe for sparse/hybrid attention",
+      "vLLM and SGLang cut no releases; reliability focus"
+    ],
+    "ai-trending": [
+      "Agent skills dominate; mattpocock/skills gained +2,206",
+      "affaan-m/ECC skills system climbed +1,486 today",
+      "magnitudedev/magnitude inference server gained +604",
+      "Ollama anchors local-first AI with 180,304 stars",
+      "Skills catalogs and .agents directories are accelerating",
+      "Vertical AI apps accelerate in finance and research"
+    ],
+    "ai-web": [
+      "Anthropic published zero new articles in this crawl",
+      "OpenAI posted 5 entries collapsing to 2 unique URLs",
+      "Both OpenAI items are metadata-only, content unconfirmed",
+      "OpenAI URLs: 'An Alien Mind' and 'Research Acceleration'",
+      "No Anthropic research, engineering, or product news captured",
+      "No safety, policy, or technical docs captured for either"
+    ],
+    "ai-hn": [
+      "GPT-6 Astra thread tops comments with 2,246 score",
+      "Collusion.wiki report claims OpenAI agent message board",
+      "Claude Fable/Mythos 5.1 sparks real-progress debate",
+      "Gemini 3.8 Flash and Cyber launch scores 1,157",
+      "Community mood: hype fatigue and safety skepticism",
+      "Debate over engineers losing hands-on skills"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B ecosystem dominates this week's trends",
+      "Unsloth's Qwen GGUF passed 10,311,462 downloads",
+      "GLM-5.3 by Zhipu AI earns 1,734 weekly likes",
+      "Abliterated and refusal-removed Qwen variants are trending",
+      "MiniMax-H3 and Lightricks LTX-2.5 hit download milestones",
+      "Classic GPT-2 remains a baseline with 14.6M downloads"
+    ],
+    "ai-community": [
+      "Dev.to focuses on production trust, not raw capability",
+      "Developers remove LangChain and delete vector DBs",
+      "Lobste.rs highlights 67-cent ARC-AGI result",
+      "US government backs OpenAI in NYT copyright case",
+      "Agents need RBAC, memory, observability, human review",
+      "OSS dev log deletes 180k lines while chasing socket leaks"
+    ]
+  }
+}
