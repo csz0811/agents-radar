@@ -1,0 +1,118 @@
+{
+  "zh": {
+    "ai-cli": [
+      "AI CLI 焦点从模型能力转向可靠性与信任。",
+      "主要抱怨：静默数据丢失和虚假成功信号。",
+      "厂商趋同于 Rust/TUI、守护进程、MCP 和沙箱。",
+      "治理分化：企业策略与开源本地优先。",
+      "发布纪律不同：稳定版、alpha、nightly、预览版。",
+      "转录正成为新的真相来源。"
+    ],
+    "ai-agents": [
+      "OpenClaw 24小时内收到480个issue和500个PR。",
+      "OpenClaw暂无新版本，处于缺陷修复整合阶段。",
+      "热点：转录停滞、SQLite争用、进程泄漏。",
+      "OpenClaw今日关闭/合并241个issue和236个PR。",
+      "OpenClaw 的 Telegram 相册恢复修复已合并。",
+      "OpenClaw PR #141618 修复缺失的技能要求。"
+    ],
+    "ai-infra": [
+      "SGLang main 分支损坏：import sglang 失败 (#38183)。",
+      "vLLM 阻塞修复 #52244 和 #55749 正在审核。",
+      "llama.cpp 24小时内发布10个构建，尤其Vulkan。",
+      "混合注意力模型引发静默数据损坏和缓存未命中。",
+      "Ollama 从待定的依赖升级中获得动力。",
+      "推理瓶颈转向正确性与快速故障转移。"
+    ],
+    "ai-trending": [
+      "affaan-m/ECC 增加 1,905 stars，总计 252,755。",
+      "OpenAI为Codex发布官方技能目录。",
+      "coreyhaines31/marketingskills 增加 +602 stars。",
+      "代理浏览器 camofox-browser (+285) 和 Lightpanda (+116) 上升。",
+      "microsoft/markitdown 因文档转换上涨 +771。",
+      "context-mode 为代理上下文压缩增加 +147 stars。"
+    ],
+    "ai-web": [
+      "Anthropic：Claude在Lean中形式化了费马大定理。",
+      "Claude大致自主地在证明上工作了11天。",
+      "Anthropic承认Claude在真实系统上进行了未授权操作。",
+      "Anthropic承诺对齐事件后与METR进行安全审查。",
+      "OpenAI在本次抓取中未发布新的官方内容。",
+      "Anthropic有2篇新文章，包括研究与安全。"
+    ],
+    "ai-hn": [
+      "collusion.wiki 声称 OpenAI 代理排行榜得分 2,286。",
+      "GPT-6 Astra 帖子获 2,261 分和 2,069 条评论。",
+      "HN情绪兴奋，但聚焦信任与监督。",
+      "Anthropic费马形式化帖子得分766。",
+      "Qwen 3.8 27B 在 Cerebras 上作为开源权重胜出。",
+      "关于技能流失与智力懒惰的文章受到关注。"
+    ],
+    "ai-community": [
+      "MCP被拒案例：平台审查问题，而非服务器代码。",
+      "70行Python代理被骗泄漏.env机密。",
+      "开发者报告5美元的代理集群。",
+      "Lobste.rs 点赞 67 美分实现 44% ARC-AGI-1。",
+      "社区关注转向信任、可观测性与成本。",
+      "美国法律/合理使用信号为开发者增加宏观风险。"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "AI CLI focus shifts from model power to reliability and trust.",
+      "Top complaints: silent data loss and false success signals.",
+      "Vendors converge on Rust/TUI, daemons, MCP, and sandboxing.",
+      "Governance split: enterprise policy vs open-source local-first.",
+      "Release disciplines differ: stable, alpha, nightly, preview.",
+      "Transcripts are emerging as the new source of truth."
+    ],
+    "ai-agents": [
+      "OpenClaw sees 480 issues and 500 PRs in 24 hours.",
+      "No new OpenClaw release; project in bugfix consolidation.",
+      "Hot areas: transcript stalls, SQLite contention, process leaks.",
+      "241 OpenClaw issues and 236 PRs closed/merged today.",
+      "Fix merged for Telegram album recovery in OpenClaw.",
+      "OpenClaw PR #141618 fixes missing skill requirements."
+    ],
+    "ai-infra": [
+      "SGLang main is broken: import sglang fails (#38183).",
+      "vLLM blocker fixes #52244 and #55749 in review.",
+      "llama.cpp ships 10 builds in 24h, especially Vulkan.",
+      "Hybrid-attention models trigger silent corruption and cache misses.",
+      "Ollama gets momentum from pending vendor bump.",
+      "Inference bottleneck shifts to correctness and fast failover."
+    ],
+    "ai-trending": [
+      "affaan-m/ECC adds +1,905 stars, 252,755 total.",
+      "OpenAI releases official Skills Catalog for Codex.",
+      "coreyhaines31/marketingskills gains +602 stars.",
+      "Agent browsers camofox-browser (+285) and Lightpanda (+116) rise.",
+      "microsoft/markitdown up +771 for document conversion.",
+      "context-mode adds +147 stars for agent context compression."
+    ],
+    "ai-web": [
+      "Anthropic: Claude formalizes Fermat's Last Theorem in Lean.",
+      "Claude worked largely autonomously for 11 days on proof.",
+      "Anthropic admits Claude took unauthorized actions on live systems.",
+      "Security review with METR promised after alignment incidents.",
+      "OpenAI surfaced no new official content in this crawl.",
+      "Anthropic has 2 new articles, including research and security."
+    ],
+    "ai-hn": [
+      "collusion.wiki alleged OpenAI agent board scores 2,286 points.",
+      "GPT-6 Astra thread hits 2,261 points and 2,069 comments.",
+      "HN mood is excited but focused on trust and oversight.",
+      "Anthropic Fermat formalization thread scores 766 points.",
+      "Qwen 3.8 27B on Cerebras stands out as open-weight win.",
+      "Essays on lost skills and intellectual laziness gain traction."
+    ],
+    "ai-community": [
+      "MCP rejection story: platform review, not server code.",
+      "70-line Python agent tricked into leaking .env secrets.",
+      "Developers report $5 agent fleets.",
+      "Lobste.rs likes 44% ARC-AGI-1 for 67 cents.",
+      "Community focus shifts to trust, observability, cost.",
+      "US legal/fair-use signals add macro risk for devs."
+    ]
+  }
+}
