@@ -1,0 +1,118 @@
+{
+  "zh": {
+    "ai-cli": [
+      "七款AI CLI工具迈向生产平台成熟",
+      "各工具Bug：假成功、挂起、内存耗尽",
+      "CLI成为应用和Shell背后的嵌入式运行时",
+      "Pi和OpenCode以扩展性取胜",
+      "用户要求供应商灵活性和成本可见性",
+      "Claude Code头号问题#92016有20条评论"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.9.3新增更安全的更新预演/恢复",
+      "24小时内更新500个issue和500个PR",
+      "OpenClaw仍有285个issue和229个PR开放",
+      "重点修复Windows/更新器故障与会话丢失",
+      "模型回退和多智能体可靠性是修复重点",
+      "静默会话和消息丢失问题仍未解决"
+    ],
+    "ai-infra": [
+      "服务栈整合至稀疏注意力MoE模型",
+      "NVFP4/FP4混合精度成为系统级默认",
+      "llama.cpp在24小时内发布15个构建(b10853-b10867)",
+      "vLLM有113个issue和500个PR，未发布",
+      "SGLang新增Qwen4/GNVFP4支持和快速恢复",
+      "智能体协议正确性是最重要的用户可见Bug类型"
+    ],
+    "ai-trending": [
+      "OpenAI发布Codex Skills与Plugins仓库",
+      "hyperframes将HTML转为智能体视频，+2,628星",
+      "microsoft/markitdown +2,045：文档转Markdown",
+      "ollama以180,478星支撑自托管推理",
+      "第三方Claude/Codex技能包增长迅速",
+      "趋势已决定性地转向智能体层"
+    ],
+    "ai-web": [
+      "Anthropic点名DeepSeek等蒸馏Claude",
+      "Anthropic：约24k假账户产生16M+次交互",
+      "Anthropic将832个恶意账户映射至MITRE ATT&CK",
+      "Anthropic称AI攻击者转向更晚的自主阶段",
+      "OpenAI帖子暗示图像模型与Navier-Stokes研究",
+      "报告提到首个大规模AI策划的间谍活动"
+    ],
+    "ai-hn": [
+      "OpenAI Navier-Stokes说法登顶HN：999分、811评论",
+      "DeepMind AlphaGenome Atlas在AI驱动基因组学中居首",
+      "ChatGPT Images 2.5发布获257分、329评论",
+      "Mistral的€3B融资在HN引发炒作/疲劳分歧",
+      "LibreOffice宣传不含AI后下载量创纪录",
+      "Dan Luu智能体验证研究引发热议"
+    ],
+    "ai-community": [
+      "Dev.to热议AI是否让开发者更懒",
+      "多数AI智能体只是穿着风衣的if语句",
+      "AI没有杀死系统设计，而是让糟糕设计更容易",
+      "美国政府支持OpenAI在NYT版权案中的立场",
+      "Scott Aaronson发文讨论LLM自指性",
+      "社区在AI杠杆与工程判断之间保持平衡"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Seven AI CLI tools converge on production platform maturity",
+      "Bugs across tools: false success, hangs, OOMs",
+      "CLIs become embedded runtimes behind apps and shells",
+      "Pi and OpenCode win on extensibility",
+      "Users demand provider flexibility and cost visibility",
+      "Claude Code top issue #92016 racks up 20 comments"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.9.3 adds safer update rehearsal/recovery",
+      "500 issues and 500 PRs updated in 24h",
+      "285 issues remain open; 229 PRs open in OpenClaw",
+      "Windows/updater failures and session loss fixes in focus",
+      "Model fallback and multi-agent reliability top fix list",
+      "Silent session and message loss issues remain open"
+    ],
+    "ai-infra": [
+      "Serving stack consolidating on sparse-attention MoE models",
+      "NVFP4/FP4 mixed-precision becomes system-level default",
+      "llama.cpp ships 15 builds (b10853-b10867) in 24h",
+      "vLLM sees 113 issues and 500 PRs, no release",
+      "SGLang adds Qwen4/GNVFP4 support and fast recovery",
+      "Agentic protocol correctness is top user-visible bug class"
+    ],
+    "ai-trending": [
+      "OpenAI ships Codex Skills and Plugins repos",
+      "hyperframes turns HTML into agent video; +2,628 stars",
+      "microsoft/markitdown +2,045 for doc-to-Markdown",
+      "ollama at 180,478 stars anchors self-hosted inference",
+      "Third-party Claude/Codex skill packs growing fast",
+      "Trending momentum shifts decisively to agent layer"
+    ],
+    "ai-web": [
+      "Anthropic names DeepSeek et al in Claude distillation",
+      "Anthropic: 16M+ exchanges via ~24k fake accounts",
+      "Anthropic maps 832 malicious accounts to MITRE ATT&CK",
+      "AI attackers shift to later autonomous stages, per Anthropic",
+      "OpenAI posts hint at image model and Navier-Stokes work",
+      "Report cites first large-scale AI-orchestrated espionage"
+    ],
+    "ai-hn": [
+      "OpenAI Navier-Stokes claim tops HN: 999 points, 811 comments",
+      "DeepMind AlphaGenome Atlas ranks top for AI-driven genomics",
+      "ChatGPT Images 2.5 launch draws 257 points and 329 comments",
+      "Mistral's €3B raise splits HN on hype/fatigue",
+      "LibreOffice hits record downloads after touting no AI",
+      "Dan Luu agent verification study draws active debate"
+    ],
+    "ai-community": [
+      "Dev.to debates whether AI makes developers lazier",
+      "Most AI Agents Are Just If-Statements in a Trench Coat",
+      "AI didn't kill system design; it made bad design easier",
+      "US government backs OpenAI in NYT copyright case",
+      "Scott Aaronson writes on LLM self-referentiality",
+      "Communities balance AI leverage and engineering judgment"
+    ]
+  }
+}
