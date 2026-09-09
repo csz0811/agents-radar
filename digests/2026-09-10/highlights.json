@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "一日内发布14个AI CLI版本",
+      "Codex v0.154.0 新增 GPT-6-Astra 与 worktrees",
+      "Claude Code 发布 v2.1.266/v2.1.267 补丁",
+      "Copilot CLI v1.0.84-3 发布补丁修复",
+      "Claude Code Function Hooks 提案获153条评论",
+      "担忧：子代理状态、上下文丢失、token消耗"
+    ],
+    "ai-agents": [
+      "OpenClaw 24小时内收到500个issue和500个PR",
+      "一天内合并或关闭251个PR",
+      "下一版本预计在2026.9.3之后发布",
+      "ClawHub 插件发现 UX 栈待审查",
+      "回归问题影响 Codex OAuth 与内存持久化",
+      "已修复P0/P1回归：Windows网关、飞书工具"
+    ],
+    "ai-infra": [
+      "vLLM v0.29.0 稳定版，含594次提交",
+      "SGLang：9个高优先级稳定性bug，未发布",
+      "llama.cpp 发布构建 b10871–b10883",
+      "LiteLLM v1.102.0.dev.1 发布签名镜像",
+      "Ollama 有2个未修复的高危问题",
+      "静默故障：temp=0 非确定性、嵌入为零"
+    ],
+    "ai-trending": [
+      "Agent技能仓库趋势：superpowers、ECC、PI-Desktop",
+      "腾讯 teamai-cli 快速攀升",
+      "PI-Desktop 是本地 Electron + Rust 代理桌面",
+      "Ollama 以180,531个GitHub星标领先",
+      "LangChain 有146,022星标，正在吸收技能",
+      "RAG 超越向量，走向知识图谱与推理"
+    ],
+    "ai-web": [
+      "Anthropic 评估4起真实AI安全事件",
+      "审查量从141k增至481M条记录",
+      "第四起事件涉及RL环境中的早期 Claude Opus 4.6",
+      "Anthropic 模型：Opus 4.8、Fable、Mythos 系列",
+      "Anthropic 融资 $65B，估值 $965B",
+      "OpenAI 发布 GPT-6 Astra 页面；Christiano 加入董事会"
+    ],
+    "ai-hn": [
+      "AlphaGenome Atlas DNA图谱登顶HN，获590分",
+      "Mistral 的 €3B 融资与 Meta Muse 获大量投票",
+      "Claude 按钮演示展示自然语言UI控制",
+      "GPT-6 Astra 循环Transformer分析获310分",
+      "HN 热议失控代理与 Anthropic 监控",
+      "Terence Tao 对‘挖掘’的批评引发研究辩论"
+    ],
+    "ai-arxiv": [
+      "论文转向自进化和可感知执行的代理",
+      "预训练损失检查点不一定是SFT最优的",
+      "RLVR中群体相对奖励可能缺乏学习信号",
+      "SPINE 在持续多轮压力下测试谄媚行为",
+      "人形机器人导航与临床诊断AI取得进展",
+      "3D开放词汇场景理解崭露头角"
+    ],
+    "ai-community": [
+      "Dev.to：30天AI编写代码暴露边界问题",
+      "验证而非生成成为新瓶颈",
+      "LLM建议的Postgres索引接受测试",
+      "CLAUDE.md 规则用于测试AI代码审查器",
+      "美国政府支持OpenAI在NYT版权案中的立场",
+      "Anthropic 对齐评估聚焦网络事件"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "14 AI CLI releases shipped in one day",
+      "Codex v0.154.0 adds GPT-6-Astra and worktrees",
+      "Claude Code patches v2.1.266/v2.1.267 released",
+      "Copilot CLI v1.0.84-3 ships a patch fix",
+      "Claude Code Function Hooks proposal draws 153 comments",
+      "Concerns: subagent status, context loss, token burn"
+    ],
+    "ai-agents": [
+      "OpenClaw sees 500 issues and 500 PRs in 24h",
+      "251 PRs merged or closed in a day",
+      "Next release expected after 2026.9.3",
+      "ClawHub plugin discovery UX stack awaits review",
+      "Regressions hit Codex OAuth and memory persistence",
+      "P0/P1 regressions fixed: Windows gateway, Feishu tools"
+    ],
+    "ai-infra": [
+      "vLLM v0.29.0 stable with 594 commits",
+      "SGLang: 9 ranked stability bugs, no release",
+      "llama.cpp ships builds b10871–b10883",
+      "LiteLLM v1.102.0.dev.1 ships signed images",
+      "Ollama has 2 high-severity unfixed issues",
+      "Silent failures: temp=0 nondeterminism, zero embeddings"
+    ],
+    "ai-trending": [
+      "Agent skills repos trend: superpowers, ECC, PI-Desktop",
+      "Tencent's teamai-cli climbs quickly",
+      "PI-Desktop is a local Electron + Rust agent desktop",
+      "Ollama leads with 180,531 GitHub stars",
+      "LangChain has 146,022 stars, absorbing skills",
+      "RAG moves beyond vectors to knowledge graphs and reasoning"
+    ],
+    "ai-web": [
+      "Anthropic assesses 4 real-world AI security incidents",
+      "Review grew from 141k to 481M transcripts",
+      "Fourth incident: early Claude Opus 4.6 in RL environment",
+      "Anthropic models: Opus 4.8, Fable, Mythos families",
+      "Anthropic raises $65B at $965B valuation",
+      "OpenAI posts GPT-6 Astra page; Christiano joins board"
+    ],
+    "ai-hn": [
+      "AlphaGenome Atlas DNA map tops HN with 590 points",
+      "Mistral's €3B raise and Meta Muse draw big votes",
+      "Claude button demo shows natural-language UI control",
+      "GPT-6 Astra looped-transformers analysis scores 310",
+      "HN debates rogue agents and Anthropic surveillance",
+      "Terence Tao's 'mining' critique fuels research debate"
+    ],
+    "ai-arxiv": [
+      "Papers shift to self-evolving, execution-aware agents",
+      "Pretraining-loss checkpoint isn't necessarily SFT-optimal",
+      "Group-relative rewards in RLVR can lack learning signal",
+      "SPINE tests sycophancy under sustained multi-turn pressure",
+      "Humanoid navigation and clinical diagnostics AI advance",
+      "3D open-vocabulary scene understanding emerges"
+    ],
+    "ai-community": [
+      "Dev.to: 30 days of AI-written code breaks at edges",
+      "Verification, not generation, is the new bottleneck",
+      "LLM-suggested Postgres indexes put to the test",
+      "CLAUDE.md rules used to test AI code reviewers",
+      "US government backs OpenAI in NYT copyright case",
+      "Anthropic alignment assessments target cyber incidents"
+    ]
+  }
+}
