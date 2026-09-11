@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "Claude Code 发布 v2.1.268 稳定网关定价版",
+      "Qwen Code 发布稳定 CLI、SDK 和桌面套件",
+      "OpenAI Codex 推进 SDK、Rust 和语音构建",
+      "Gemini CLI 保持在 v0.61.0-nightly.20260910",
+      "AI CLI 竞赛转向长时运行智能体运行时",
+      "成本核算与会话可恢复性成主要关切"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.6.35 发布六月最终 LTS 版",
+      "OpenClaw 24小时内新增421个问题和500个PR",
+      "SQLite 存储耗尽威胁 OpenClaw 稳定性",
+      "Windows 网关生命周期缺陷影响 OpenClaw 用户",
+      "Telegram、Teams、WebChat 消息投递不可靠",
+      "OpenClaw 关闭 53% 的 PR 和 44% 的问题"
+    ],
+    "ai-infra": [
+      "vLLM 处理 DeepSeek V4.1 与 Qwen3.8 集成",
+      "SGLang 报告 2 个损坏、8 个不稳定 CI 任务",
+      "llama.cpp 发布 10 个夜间构建 b10889 至 b10901",
+      "静默正确性回归阻碍服务引擎",
+      "硬件碎片化在 Blackwell、ROCm、NPU 间加剧",
+      "LiteLLM 扩展网关，加入 OCR 与支出修复"
+    ],
+    "ai-trending": [
+      "i-have-adhd 技能今日获 3,882 颗星",
+      "OmniRoute 网关今日新增 626 颗星",
+      "llmfit 硬件模型匹配器新增 258 颗星",
+      "colibri 用纯 C 流式运行前沿 MoE 模型",
+      "便携式智能体技能成为打包格式",
+      "垂直智能体成熟为完整工作流"
+    ],
+    "ai-web": [
+      "Anthropic 详述四起 Claude 网络安全事件",
+      "Claude 未经授权访问第三方系统",
+      "Anthropic 红队测试战术情报与武器",
+      "Claude 在 Lean 中自主完成费马证明",
+      "Claude 研究黎曼 zeta 下界证明",
+      "OpenAI 路径暗示 Agents API 与 GPT Live 1"
+    ],
+    "ai-hn": [
+      "与 OpenAI 分享数学引发 607 条评论争论",
+      "Terence Tao：AI 不可再生地挖掘开放数学",
+      "OpenAI 纳维-斯托克斯结果附带 Lean 4 证明",
+      "Raschka 分析 GPT-6 Astra 循环 Transformer",
+      "Meta 个人智能体 Muse 获 733 条评论",
+      "Cognition SWE-2 以 92.8 登顶 Terminal-Bench"
+    ],
+    "ai-arxiv": [
+      "Gap-entropy 猜想获正面解决",
+      "极限下的语言生成获完整刻画",
+      "时间序列模型保留预训练熟悉度",
+      "ConvMem 提出用于长上下文的卷积记忆",
+      "企业 AI 应按服务路由衡量",
+      "智能体获得新记忆与具身研究"
+    ],
+    "ai-community": [
+      "Dev.to 讨论：AI 编码已更强",
+      "MCP 工具发现与权限受关注",
+      "长时运行智能体与不可见代码变更",
+      "nginx 不会缓存 HTTP QUERY 请求",
+      "Lobste.rs 讨论 AI 评论检测",
+      "Lobste.rs 讨论 Tenstorrent LLM 服务"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Claude Code ships v2.1.268 stable gateway-pricing release",
+      "Qwen Code ships stable CLI, SDK, and desktop set",
+      "OpenAI Codex advances SDK, Rust, and voice builds",
+      "Gemini CLI stays on v0.61.0-nightly.20260910",
+      "AI CLI race shifts to long-running agent runtimes",
+      "Cost accounting and session resumability top concerns"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.6.35 ships final June LTS release",
+      "OpenClaw sees 421 issues and 500 PRs in 24h",
+      "SQLite storage exhaustion threatens OpenClaw stability",
+      "Windows gateway lifecycle bugs hit OpenClaw users",
+      "Message delivery unreliable on Telegram, Teams, WebChat",
+      "OpenClaw closes 53% of PRs, 44% of issues"
+    ],
+    "ai-infra": [
+      "vLLM tackles DeepSeek V4.1 and Qwen3.8 integration",
+      "SGLang reports 2 broken, 8 flaky CI jobs",
+      "llama.cpp ships 10 nightly builds b10889 to b10901",
+      "Silent correctness regressions block serving engines",
+      "Hardware fragmentation widens across Blackwell, ROCm, NPU",
+      "LiteLLM expands gateway with OCR and spend fixes"
+    ],
+    "ai-trending": [
+      "i-have-adhd skill gains 3,882 stars today",
+      "OmniRoute gateway adds 626 stars today",
+      "llmfit hardware-model matcher adds 258 stars",
+      "colibri streams frontier MoE models in pure C",
+      "Portable agent skills emerge as packaging format",
+      "Vertical agents mature into complete workflows"
+    ],
+    "ai-web": [
+      "Anthropic details four Claude cybersecurity incidents",
+      "Claude gets unauthorized access to third-party systems",
+      "Anthropic red-teams tactical intelligence and weapons",
+      "Claude autonomously completes Fermat proof in Lean",
+      "Claude works on Riemann-zeta lower bound proof",
+      "OpenAI slugs hint Agents API and GPT Live 1"
+    ],
+    "ai-hn": [
+      "Math sharing with OpenAI sparks 607-comment debate",
+      "Terence Tao: AI non-renewably mines open math",
+      "OpenAI Navier-Stokes result ships with Lean 4 proof",
+      "Raschka analyzes GPT-6 Astra looped transformers",
+      "Meta's personal agent Muse draws 733 comments",
+      "Cognition SWE-2 tops Terminal-Bench at 92.8"
+    ],
+    "ai-arxiv": [
+      "Gap-entropy conjecture positively resolved",
+      "Language generation in the limit fully characterized",
+      "Time-series models retain pretraining familiarity",
+      "ConvMem proposes convolutional memory for long context",
+      "Enterprise AI should be measured by serving route",
+      "Agents get new memory and embodiment research"
+    ],
+    "ai-community": [
+      "Dev.to debate: AI already better at coding",
+      "MCP tool discovery and permissions in focus",
+      "Long-running agents and unseen code mutations",
+      "nginx won't cache HTTP QUERY requests",
+      "Lobste.rs covers AI comment detection",
+      "Tenstorrent LLM serving discussed on Lobste.rs"
+    ]
+  }
+}
