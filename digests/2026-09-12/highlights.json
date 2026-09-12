@@ -1,0 +1,134 @@
+{
+  "zh": {
+    "ai-cli": [
+      "Claude Code 发布稳定版 v2.1.269，含插件评估",
+      "OpenAI Codex 发布 6 个 Rust alpha 标签，无变更日志",
+      "Gemini CLI 每夜版 v0.61.0 无用户可见变更",
+      "AI CLI 竞赛转向 Windows 与沙箱可靠性",
+      "成本护栏与企业治理成关键",
+      "OpenCode 在每夜版中稳定 V2 beta"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.9.4 改进更新失败恢复",
+      "OpenClaw 更新后遇发布阻断边缘案例",
+      "OpenClaw 24 小时分诊 500 问题与 500 PR",
+      "迁移风险：回滚安全与交接租约",
+      "Doctor 迁移与会话记录缺陷影响 OpenClaw",
+      "追踪五个 claw 项目，OpenClaw 领先"
+    ],
+    "ai-infra": [
+      "DeepSeek-V4.1 成为常见服务引擎目标",
+      "vLLM 合入协同 DSv4.1 并行 PR 集",
+      "SGLang 提议单个 PR 全面支持 DeepSeek-V4.1",
+      "vLLM 0.28/0.29 有未解决主机内存冻结",
+      "Ollama 0.34.0 云模型约 45 分钟后卡住",
+      "LiteLLM 消化 PyPI 供应链事件"
+    ],
+    "ai-trending": [
+      "i-have-adhd ADHD 输出技能获 +3,463 星",
+      "github/spec-kit 因 agent 规范涨 +1,015",
+      "obra/superpowers 技能工作流增 +729",
+      "llm_wiki 提供 RAG 的 wiki 式替代 (+647)",
+      "CloddsBot 交易 agent 今日飙 +626",
+      "PI-Desktop 本地优先编码 agent 增 +552"
+    ],
+    "ai-web": [
+      "Anthropic 新增 14 篇文章；OpenAI 仅元数据",
+      "Claude Corps 劳动力研修项目启动",
+      "Anthropic 发布新 AI Fluency Index",
+      "June 2026 Economic Index Cadences 报告发布",
+      "Frontier Red Team 探查战术瞄准风险",
+      "OpenAI 存储文章无正文"
+    ],
+    "ai-hn": [
+      "HN 争论信任 OpenAI 未公开数学",
+      "帖子主张 AI 正使数学错位",
+      "Meta Muse 个人 agent 获 656 分、736 评论",
+      "Claude 18+ 年龄验证获 565 分、589 评论",
+      "GPT-6 Astra 循环 transformer 分析获 513",
+      "OpenAI Navier-Stokes 发布含 Lean 4 证明"
+    ],
+    "ai-arxiv": [
+      "GPU-CFR 将遗憾最小化提速 80 倍",
+      "MoE 模型在重复数据上更易过拟合",
+      "通过隐藏状态干预追踪 LLM 检索",
+      "Agentic AI 迈向持久内部驱动",
+      "新基准探究空间推理与 RAG 安全",
+      "边缘 VLM 与阿拉伯语语音 LLM 瞄准部署"
+    ],
+    "ai-community": [
+      "Nexpath 评论问提示 QA 是否让编码更安全",
+      "我的 Agent 从不累。我会：论满意化",
+      "多数 AI 推理轨迹是事后合理化",
+      "一次性确认令牌的重复写入被标记",
+      "非确定性 LLM 评审威胁稳健评测",
+      "Lobste.rs 探究所谓 agent 攻击 RubyGems"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "Claude Code ships stable v2.1.269 with plugin eval",
+      "OpenAI Codex posts 6 Rust alpha tags, no changelog",
+      "Gemini CLI nightly v0.61.0 has no user-facing changes",
+      "AI CLI race shifts to Windows and sandbox reliability",
+      "Cost guardrails and enterprise governance now key",
+      "OpenCode stabilizes V2 beta amid nightly releases"
+    ],
+    "ai-agents": [
+      "OpenClaw v2026.9.4 improves failed update recovery",
+      "OpenClaw hit by release-blocking edge cases after update",
+      "OpenClaw triages 500 issues and 500 PRs in 24h",
+      "Migration risks: rollback safety and handoff leases",
+      "Doctor migrations and session transcript bugs hit OpenClaw",
+      "Five claw projects tracked, led by OpenClaw"
+    ],
+    "ai-infra": [
+      "DeepSeek-V4.1 becomes common serving-engine target",
+      "vLLM lands coordinated DSv4.1 parallel PR set",
+      "SGLang proposes full DeepSeek-V4.1 support in one PR",
+      "vLLM 0.28/0.29 has unresolved host-memory freeze",
+      "Ollama 0.34.0 wedges on cloud models after ~45 min",
+      "LiteLLM digests PyPI supply-chain incident"
+    ],
+    "ai-trending": [
+      "i-have-adhd ADHD output skill gains +3,463 stars",
+      "github/spec-kit rises +1,015 on agent specs",
+      "obra/superpowers adds +729 for skill workflows",
+      "llm_wiki offers wiki-style alternative to RAG (+647)",
+      "CloddsBot trading agent surges +626 today",
+      "PI-Desktop local-first coding agent gains +552"
+    ],
+    "ai-web": [
+      "Anthropic adds 14 articles; OpenAI one metadata-only",
+      "Claude Corps workforce fellowship launches",
+      "Anthropic publishes new AI Fluency Index",
+      "June 2026 Economic Index Cadences report released",
+      "Frontier Red Team probes tactical targeting risks",
+      "OpenAI storage post has no article text"
+    ],
+    "ai-hn": [
+      "HN debates trusting OpenAI with unpublished math",
+      "Thread argues AI is misaligning mathematics",
+      "Meta Muse personal agent draws 656 score, 736 comments",
+      "Claude 18+ age assurance gets 565 score, 589 comments",
+      "GPT-6 Astra looped transformers analysis hits 513",
+      "OpenAI Navier-Stokes release includes Lean 4 proof"
+    ],
+    "ai-arxiv": [
+      "GPU-CFR speeds regret minimization 80x",
+      "MoE models overfit more on repeated data",
+      "LLM retrieval traced via hidden-state interventions",
+      "Agentic AI moves toward persistent internal drives",
+      "New benchmarks probe spatial reasoning and RAG safety",
+      "Edge VLMs and Arabic speech-LLMs target deployment"
+    ],
+    "ai-community": [
+      "Nexpath review asks if prompt QA makes coding safer",
+      "My Agents Never Get Tired. I Do: On Satisficing",
+      "Most AI reasoning traces are post-hoc rationalizations",
+      "Duplicate writes from one-shot confirm tokens flagged",
+      "Non-deterministic LLM judges threaten robust evals",
+      "Lobste.rs probes alleged agent attack on RubyGems"
+    ]
+  }
+}
