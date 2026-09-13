@@ -1,0 +1,102 @@
+{
+  "zh": {
+    "ai-cli": [
+      "AI CLI 工具成熟为智能体运行时基础设施",
+      "配额与用量统计痛点困扰所有 AI CLI",
+      "卡死与静默失败主导社区反馈",
+      "MCP、ACP、WebSocket 正确性现已成为关键",
+      "沙箱与隔离是关键差异化因素",
+      "Claude Code v2.1.270修复git权限回退"
+    ],
+    "ai-agents": [
+      "OpenClaw 24h新增500 issue与500PR",
+      "关闭230 issue，合并/关闭234 PR",
+      "OpenClaw 今日未发布新版本",
+      "2026.9.x 升级可靠性是 P0 风险",
+      "Doctor、auth-lock 与回滚失败激增",
+      "子代理完成与进程泄漏问题持续"
+    ],
+    "ai-infra": [
+      "24小时内基础设施无版本化发布",
+      "SGLang 记录338个PR更新；LiteLLM 241",
+      "DeepSeek-V4.1-Flash 驱动全栈工作",
+      "vLLM 应对 SM120/SM121 正确性故障",
+      "静默数值损坏是今日最严重缺陷",
+      "本地运行时落后于数据中心级检查点"
+    ],
+    "ai-trending": [
+      "智能体框架层今日位居热门仓库榜首",
+      "ECC 在热门数据集中达257,112星",
+      "hermes-agent 达244,902星",
+      "DeskcommCRM 增504星，AI类涨幅第一",
+      "CloddsBot 增376星，交易1000+市场",
+      "SKILL.md 成为技能分发格式"
+    ],
+    "ai-hn": [
+      "AI数学不对齐讨论帖获1,179分",
+      "OpenAI 智能体关联未披露 RubyGems 攻击",
+      "OpenAI 未发表数学争议获864分",
+      "Real-SWE 在私有代码库评测模型",
+      "Meta Muse 智能体与 Claude 年龄验证政策",
+      "Altman 讨论放缓AI与上市"
+    ],
+    "ai-community": [
+      "Dev.to 与 Lobste.rs 关注生产纪律",
+      "智能体易演示，难运维",
+      "500篇‘AI将取代开发者’帖子有3个共同缺陷",
+      "领域限定重放使弱智能体召回翻倍",
+      "GPT-6 Astra 对 Claude Fable 5.1 对 Gemini 3.8",
+      "Lobste.rs 探讨AI治理与代码注释检测"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "AI CLI tools mature into agent runtime infrastructure",
+      "Quota and usage accounting pains hit all AI CLIs",
+      "Hangs and silent failures dominate community feedback",
+      "MCP, ACP, WebSocket correctness now critical",
+      "Sandboxing and isolation are key differentiators",
+      "Claude Code v2.1.270 fixes git permission regress"
+    ],
+    "ai-agents": [
+      "OpenClaw saw 500 issues and 500 PRs in 24h",
+      "230 issues closed, 234 PRs merged/closed",
+      "No new OpenClaw releases shipped today",
+      "2026.9.x upgrade reliability is a P0 risk",
+      "Doctor, auth-lock and rollback failures spike",
+      "Subagent completion and process leakage persist"
+    ],
+    "ai-infra": [
+      "No versioned release shipped across infra in 24h",
+      "SGLang logs 338 PR updates; LiteLLM 241",
+      "DeepSeek-V4.1-Flash drives stack-wide work",
+      "vLLM fights SM120/SM121 correctness failures",
+      "Silent numerical corruption is today's worst defect",
+      "Local runtimes lag datacenter-class checkpoints"
+    ],
+    "ai-trending": [
+      "Agent harness layer tops trending repos today",
+      "ECC hits 257,112 stars in trending dataset",
+      "hermes-agent reaches 244,902 stars",
+      "DeskcommCRM gains 504 stars, top AI gainer",
+      "CloddsBot adds 376 stars, trades 1,000+ markets",
+      "SKILL.md emerges as skills distribution format"
+    ],
+    "ai-hn": [
+      "AI math misalignment thread hits 1,179 points",
+      "OpenAI agents tied to undisclosed RubyGems attack",
+      "OpenAI unpublished-math controversy draws 864 points",
+      "Real-SWE benchmarks models on private codebases",
+      "Meta Muse agent and Claude age-assurance policy",
+      "Altman discusses slowing AI and going public"
+    ],
+    "ai-community": [
+      "Dev.to and Lobste.rs focus on production discipline",
+      "Agents are easy to demo, hard to operate",
+      "500 'AI will replace developers' posts share 3 flaws",
+      "Domain-scoped replay doubles weak agent recall",
+      "GPT-6 Astra vs Claude Fable 5.1 vs Gemini 3.8",
+      "Lobste.rs covers AI governance and code-comment detection"
+    ]
+  }
+}
