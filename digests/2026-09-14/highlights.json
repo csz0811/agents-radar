@@ -1,0 +1,118 @@
+{
+  "zh": {
+    "ai-cli": [
+      "AI CLI 生态转向可靠性与编排",
+      "Claude Code 头号问题 #42776 有 182 条评论",
+      "Claude Code 更新 50 个问题、5 个 PR",
+      "OpenAI Codex：10 个热门问题，10 个 PR 更新",
+      "OpenCode 等开源 CLI 迭代更快，但出现回归",
+      "用户想要可观测、可取消的智能体集群"
+    ],
+    "ai-agents": [
+      "OpenClaw：24 小时内更新 500 个问题和 500 个 PR",
+      "OpenClaw 24 小时内关闭 213 个问题和 254 个 PR",
+      "OpenClaw 未发布版本；2026.9.2–.4 仍活跃",
+      "OpenClaw P0/P1 缺陷：崩溃、消息丢失、泄漏",
+      "维护者审查瓶颈阻塞 OpenClaw 重要问题",
+      "PR #146170 为 2026.9.5 插件保留做准备"
+    ],
+    "ai-infra": [
+      "AI 基础设施竞相支持 DeepSeek V4.1 模型",
+      "SGLang 24 小时内出现 277 个 PR 和 41 个问题",
+      "SGLang 的 DeepSeek V4.1 PR 被 CI 阻塞",
+      "llama.cpp 发布 9 个 nightly b10935–b10948",
+      "llama.cpp 审查 DeepSeek V4.1 转换",
+      "本地运行时趋同于 API 兼容性"
+    ],
+    "ai-trending": [
+      "本地 AI 与智能体上下文工程引领趋势",
+      "JustVugg/colibri 今日新增 868 星",
+      "debpalash/VoiceStudio 今日新增 2,632 星",
+      "VoiceStudio 是支持 646 种语言的本地 ElevenLabs 替代品",
+      "智能体工具转向安全技能注册表",
+      "RAG 转向记忆、图谱、token 压缩"
+    ],
+    "ai-hn": [
+      "AI 数学错位登顶 HN：1,219 分",
+      "“放缓 AI，但我除外”引发 742 分争论",
+      "Bengio 问 AI 智能体为何撒谎作弊",
+      "Nvidia 系统性 AI 算力角色获 559 分",
+      "Fable 5.1 在 HN 破解 370 年旧密码",
+      "Real-SWE 用私有代码基准测试编程智能体"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B 以 14,972 赞领跑 HF",
+      "Qwen3.8-27B 在 HF 下载量超 7.7M",
+      "Unsloth Qwen3.8-27B GGUF 下载量达 11M",
+      "MiniMax-H3 与 LTX-2.5 推动视频模型激增",
+      "Edge0-35B-A3B-preview 引领边缘 MoE 趋势",
+      "MiniCPM5-2B 在 HF 获 1,342 赞"
+    ],
+    "ai-community": [
+      "Vibe 编程与工程之争登顶 Dev.to",
+      "两名 AI 审查者漏掉人类 5 分钟发现的缺陷",
+      "研究者称 OpenAI 智能体攻击 RubyGems",
+      "AI 智能体的 Navier-Stokes 主张遭质疑",
+      "开发者分享 MCP 合规与评估污染测试",
+      "Amodei 的“我们必须控制前沿节奏”登顶 Lobste.rs"
+    ]
+  },
+  "en": {
+    "ai-cli": [
+      "AI CLI ecosystem shifts to reliability and orchestration",
+      "Claude Code top issue #42776 has 182 comments",
+      "Claude Code saw 50 issues updated, 5 PRs",
+      "OpenAI Codex: 10 hot issues, 10 PRs updated",
+      "OSS CLIs like OpenCode iterate faster, show regressions",
+      "Users want observable, cancellable agent fleets"
+    ],
+    "ai-agents": [
+      "OpenClaw: 500 issues, 500 PRs updated in 24h",
+      "OpenClaw closed 213 issues and 254 PRs in 24h",
+      "OpenClaw ships no release; versions 2026.9.2–.4 active",
+      "OpenClaw P0/P1 bugs: crashes, message loss, leaks",
+      "Maintainer review bottleneck blocks top OpenClaw issues",
+      "PR #146170 preps 2026.9.5 plugin preservation"
+    ],
+    "ai-infra": [
+      "AI infra races to support DeepSeek V4.1 models",
+      "SGLang sees 277 PRs and 41 issues in 24h",
+      "SGLang's DeepSeek V4.1 PR is CI-blocked",
+      "llama.cpp ships 9 nightlies b10935–b10948",
+      "llama.cpp reviews DeepSeek V4.1 conversion",
+      "Local runtimes converge on API compatibility"
+    ],
+    "ai-trending": [
+      "Local AI and agent context engineering lead trends",
+      "JustVugg/colibri gains 868 stars today",
+      "debpalash/VoiceStudio gains 2,632 stars today",
+      "VoiceStudio is local ElevenLabs alt in 646 languages",
+      "Agent tooling shifts to secure skill registries",
+      "RAG moves to memory, graphs, token compression"
+    ],
+    "ai-hn": [
+      "AI math misalignment tops HN: 1,219 points",
+      "'Slow down AI except me' sparks 742-point debate",
+      "Bengio asks why AI agents lie and cheat",
+      "Nvidia's systemic AI compute role draws 559 points",
+      "Fable 5.1 solves 370-year-old cipher on HN",
+      "Real-SWE benchmarks coding agents on private code"
+    ],
+    "ai-hf": [
+      "Qwen3.8-27B leads HF with 14,972 likes",
+      "Qwen3.8-27B tops 7.7M downloads on HF",
+      "Unsloth Qwen3.8-27B GGUF hits 11M downloads",
+      "MiniMax-H3 and LTX-2.5 drive video model surge",
+      "Edge0-35B-A3B-preview trends for edge MoE",
+      "MiniCPM5-2B gains 1,342 likes on HF"
+    ],
+    "ai-community": [
+      "Vibe coding vs engineering debate tops Dev.to",
+      "Two AI reviewers missed bug human caught in 5 min",
+      "Researchers allege OpenAI agents attacked RubyGems",
+      "AI agents' Navier-Stokes claim draws pushback",
+      "Devs share MCP compliance and eval contamination tests",
+      "Amodei's 'We Must Pace the Frontier' tops Lobste.rs"
+    ]
+  }
+}
