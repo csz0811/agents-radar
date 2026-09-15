@@ -66,8 +66,8 @@ describe("issue title functions", () => {
   });
 
   it("OPENCLAW_ISSUE_TITLE produces zh and en titles", () => {
-    expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "zh")).toContain("OpenClaw");
-    expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "en")).toContain("OpenClaw Ecosystem Digest");
+    expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "zh")).toContain("AI Agent 框架生态日报");
+    expect(OPENCLAW_ISSUE_TITLE("2026-03-12", "en")).toContain("AI Agent Framework Ecosystem Digest");
   });
 
   it("INFRA_ISSUE_TITLE produces zh and en titles", () => {

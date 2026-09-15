@@ -42,8 +42,8 @@ export const CLI_REPORT = {
 } as const;
 
 export const OPENCLAW_REPORT = {
-  title: t("OpenClaw 生态日报", "OpenClaw Ecosystem Digest"),
-  deepDive: t("OpenClaw 项目深度报告", "OpenClaw Deep Dive"),
+  title: t("AI Agent 框架生态日报", "AI Agent Framework Ecosystem Digest"),
+  deepDive: t("焦点项目深度报告", "Focus Project Deep Dive"),
   comparison: t("横向生态对比", "Cross-Ecosystem Comparison"),
   peers: t("同赛道项目详细报告", "Peer Project Reports"),
 } as const;
@@ -129,7 +129,7 @@ export const CLI_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
   lang === "en" ? `📊 AI CLI Tools Digest ${dateStr}` : `📊 AI CLI 工具社区动态日报 ${dateStr}`;
 
 export const OPENCLAW_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
-  lang === "en" ? `🦞 OpenClaw Ecosystem Digest ${dateStr}` : `🦞 OpenClaw 生态日报 ${dateStr}`;
+  lang === "en" ? `🤖 AI Agent Framework Ecosystem Digest ${dateStr}` : `🤖 AI Agent 框架生态日报 ${dateStr}`;
 
 export const INFRA_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
   lang === "en" ? `⚙️ AI Infrastructure Digest ${dateStr}` : `⚙️ AI 基础设施日报 ${dateStr}`;

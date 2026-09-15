@@ -45,7 +45,7 @@ import type { DevtoData } from "./devto.ts";
 import type { LobstersData } from "./lobsters.ts";
 
 /** Output languages, in the order reports are written. */
-export const LANGS = ["zh"] as const;
+export const LANGS: readonly Lang[] = ["zh"];
 
 /** A report body in both languages. */
 export type BilingualBody = Record<Lang, string>;

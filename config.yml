@@ -39,31 +39,31 @@ cli_repos:
 
 skills_repo: anthropics/skills
 
-# ── OpenClaw (primary focus project) ─────────────────────────────────────────
-# Tracked with a dedicated deep-dive report. Set paginated: true for high-volume repos.
+# ── Agent 框架生态（深度报告焦点项目）────────────────────────────────────────
+# 字段名沿用上游的 openclaw 槽位（代码里就是「焦点项目」），只换内容：
+# 深度追踪 LangGraph，配 4 个同类框架做横向对比。paginated: true 适用于高更新量仓库。
 
 openclaw:
-  id: openclaw
-  repo: openclaw/openclaw
-  name: OpenClaw
+  id: langgraph
+  repo: langchain-ai/langgraph
+  name: LangGraph
   paginated: true
 
-# ── OpenClaw peer projects ────────────────────────────────────────────────────
-# Tracked alongside OpenClaw for cross-ecosystem comparison.
+# ── 同赛道框架（横向对比对象）─────────────────────────────────────────────────
 
 openclaw_peers:
-  - id: hermes-agent
-    repo: nousresearch/hermes-agent
-    name: Hermes Agent
-  - id: ironclaw
-    repo: nearai/ironclaw
-    name: IronClaw
-  - id: qwenpaw
-    repo: agentscope-ai/QwenPaw
-    name: QwenPaw
-  - id: zeroclaw
-    repo: zeroclaw-labs/zeroclaw
-    name: ZeroClaw
+  - id: dify
+    repo: langgenius/dify
+    name: Dify
+  - id: n8n
+    repo: n8n-io/n8n
+    name: n8n
+  - id: autogen
+    repo: microsoft/autogen
+    name: AutoGen
+  - id: crewai
+    repo: crewAIInc/crewAI
+    name: CrewAI
 
 # ── AI infrastructure ─────────────────────────────────────────────────────────
 # Inference engines, gateways and fine-tuning frameworks that the agent/CLI

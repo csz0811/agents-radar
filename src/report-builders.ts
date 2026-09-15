@@ -104,7 +104,7 @@ export function buildInfraReportContent(
 }
 
 // ---------------------------------------------------------------------------
-// OpenClaw Report
+// Focus Project Report (deep-dive on the configured primary project + peers)
 // ---------------------------------------------------------------------------
 
 export function buildOpenclawReportContent(
@@ -122,7 +122,7 @@ export function buildOpenclawReportContent(
   const { issues, prs } = fetchedOpenclaw;
 
   const peersRepoLinks =
-    `- [OpenClaw](https://github.com/${openclaw.repo})\n` +
+    `- [${openclaw.name}](https://github.com/${openclaw.repo})\n` +
     openclawPeers.map((p) => `- [${p.name}](https://github.com/${p.repo})`).join("\n");
 
   const peerDetailSections = peerDigests
