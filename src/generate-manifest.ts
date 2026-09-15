@@ -29,6 +29,7 @@ const REPORT_FILES = [
   "ai-hf-en",
   "ai-community",
   "ai-community-en",
+  "ai-cn",
   // Rollups are no longer generated — listed only so archived reports stay
   // reachable from the sidebar and RSS feed.
   "ai-weekly",

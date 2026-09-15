@@ -58,6 +58,7 @@ import {
   saveArxivReport,
   saveHfReport,
   saveCommunityReport,
+  saveQbitaiReport,
 } from "./report-savers.ts";
 import { loadWebState, fetchSiteContent, type WebFetchResult, type WebState } from "./web.ts";
 import { fetchTrendingData, type TrendingData } from "./trending.ts";
@@ -67,6 +68,7 @@ import { fetchArxivData, type ArxivData } from "./arxiv.ts";
 import { fetchHfData, type HfData } from "./hf.ts";
 import { fetchDevtoData, type DevtoData } from "./devto.ts";
 import { fetchLobstersData, type LobstersData } from "./lobsters.ts";
+import { fetchQbitaiData, type QbitaiData } from "./qbitai.ts";
 import { loadConfig } from "./config.ts";
 import { toCstDateStr, toUtcStr, weekdayOf } from "./date.ts";
 import {
@@ -119,11 +121,12 @@ async function fetchAllData(
   hfData: HfData;
   devtoData: DevtoData;
   lobstersData: LobstersData;
+  qbitaiData: QbitaiData;
 }> {
   const allConfigs = [...CLI_REPOS, OPENCLAW, ...OPENCLAW_PEERS, ...INFRA_REPOS];
   console.log(
     `  Tracking: ${allConfigs.map((r) => r.id).join(", ")}, claude-code-skills, web, hn, ph, arxiv, ` +
-      `${fetchHf ? "hf, " : ""}devto, lobsters`,
+      `${fetchHf ? "hf, " : ""}devto, lobsters, qbitai`,
   );
 
   const [
@@ -137,6 +140,7 @@ async function fetchAllData(
     hfData,
     devtoData,
     lobstersData,
+    qbitaiData,
   ] = await Promise.all([
     Promise.all(
       allConfigs.map(async (cfg) => {
@@ -199,6 +203,7 @@ async function fetchAllData(
       : Promise.resolve<HfData>({ models: [], fetchSuccess: false }),
     fetchDevtoData().catch((): DevtoData => ({ articles: [], fetchSuccess: false })),
     fetchLobstersData().catch((): LobstersData => ({ stories: [], fetchSuccess: false })),
+    fetchQbitaiData().catch((): QbitaiData => ({ items: [], fetchSuccess: false })),
   ]);
 
   return {
@@ -212,6 +217,7 @@ async function fetchAllData(
     hfData,
     devtoData,
     lobstersData,
+    qbitaiData,
   };
 }
 
@@ -419,6 +425,7 @@ async function main(): Promise<void> {
     hfData,
     devtoData,
     lobstersData,
+    qbitaiData,
   } = await fetchAllData(since, webState, isHfWeek);
 
   const peerIds = new Set(OPENCLAW_PEERS.map((p) => p.id));
@@ -564,6 +571,7 @@ async function main(): Promise<void> {
     savePhReport(phData, utcStr, dateStr, digestRepo),
     saveArxivReport(arxivData, utcStr, dateStr, digestRepo),
     saveCommunityReport(devtoData, lobstersData, utcStr, dateStr, digestRepo),
+    saveQbitaiReport(qbitaiData, utcStr, dateStr, digestRepo),
     ...(isHfWeek ? [saveHfReport(hfData, utcStr, dateStr, digestRepo)] : []),
   ]);
 

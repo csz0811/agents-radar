@@ -12,6 +12,7 @@ import type { ArxivData } from "./arxiv.ts";
 import type { HfData } from "./hf.ts";
 import type { DevtoData } from "./devto.ts";
 import type { LobstersData } from "./lobsters.ts";
+import type { QbitaiData } from "./qbitai.ts";
 import type { Lang } from "./i18n.ts";
 export function buildTrendingPrompt(data: TrendingData, dateStr: string, lang: Lang = "zh"): string {
   const trendingSection =
@@ -870,6 +871,58 @@ ${lobstersText}
    - 新兴的教程、模式或最佳实践
 
 5. **值得精读** — 2~3 篇最值得深入阅读的内容
+
+语言要求：中文，简洁专业，保留所有原文链接。
+`;
+}
+
+// ---------------------------------------------------------------------------
+// QbitAI (量子位) — Chinese AI media report
+// Note: unlike the other reports, this one has no English pass: the source
+// articles are already Chinese, so the body is generated in Chinese directly
+// (the EN->ZH round trip of `bilingualBody` would only lose fidelity).
+// ---------------------------------------------------------------------------
+
+export function buildQbitaiPrompt(data: QbitaiData, dateStr: string): string {
+  const itemsText = data.items
+    .map(
+      (a, i) =>
+        `${i + 1}. **${a.title}**\n` +
+        `   链接: ${a.url}\n` +
+        `   导语: ${a.summary || "（无）"}\n` +
+        `   作者: ${a.author || "未知"} | 发布时间: ${a.publishedAt.slice(0, 16).replace("T", " ")} UTC` +
+        (a.categories.length ? ` | 标签: ${a.categories.join(", ")}` : ""),
+    )
+    .join("\n\n");
+
+  return `你是 AI 行业资讯分析师。以下是 ${dateStr} 从量子位（qbitai.com，微信公众号同步发布）RSS 抓取的近 48 小时文章（共 ${data.items.length} 篇，仅有标题与导语，无全文）：
+
+---
+
+${itemsText}
+
+---
+
+生成一份「量子位 AI 资讯日报」，要求：
+
+1. **今日要点** — 3~5 句话概括今天最重要的 AI 动态
+
+2. **分类资讯** — 按类别组织，每个类别一张 **Markdown 表格**，列格式：
+
+   | 标题 | 简要说明 |
+   | :--- | :--- |
+
+   - **标题**：原标题做成 Markdown 链接
+   - **简要说明**：基于标题和导语 1~2 句话说明这条资讯讲什么、为什么重要
+   - 类别：
+     - 🧠 模型与研究（模型发布、论文、基准测试）
+     - 🛠️ 工具与工程（开源项目、框架、开发工具）
+     - 🏢 行业动态（公司新闻、融资、产品发布）
+     - 🤖 具身智能与多模态（机器人、世界模型、物理 AI）
+
+3. **今日观察** — 100~200 字，分析这批报道反映的行业趋势
+
+4. **值得精读** — 2~3 篇最值得点开读全文的文章，说明理由
 
 语言要求：中文，简洁专业，保留所有原文链接。
 `;

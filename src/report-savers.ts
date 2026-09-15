@@ -16,6 +16,7 @@ import {
   ARXIV_REPORT,
   HF_REPORT,
   COMMUNITY_REPORT,
+  QBITAI_REPORT,
   ISSUE_LABELS,
 } from "./i18n.ts";
 import {
@@ -25,6 +26,7 @@ import {
   buildArxivPrompt,
   buildHfPrompt,
   buildCommunityPrompt,
+  buildQbitaiPrompt,
 } from "./prompts-data.ts";
 import {
   callLlm,
@@ -38,6 +40,7 @@ import { createGitHubIssue } from "./github.ts";
 import { saveWebState, type WebFetchResult, type WebState } from "./web.ts";
 import type { HnData } from "./hn.ts";
 import type { PhData } from "./ph.ts";
+import type { QbitaiData } from "./qbitai.ts";
 import type { TrendingData } from "./trending.ts";
 import type { ArxivData } from "./arxiv.ts";
 import type { HfData } from "./hf.ts";
@@ -401,5 +404,59 @@ export async function saveCommunityReport(
     }
   } catch (err) {
     console.error(`  [community] Report generation failed: ${err}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// QbitAI (量子位) report — Chinese source, Chinese output
+// ---------------------------------------------------------------------------
+
+export async function saveQbitaiReport(
+  qbitaiData: QbitaiData,
+  utcStr: string,
+  dateStr: string,
+  digestRepo: string,
+): Promise<void> {
+  if (!qbitaiData.fetchSuccess) {
+    console.log("  [qbitai] No data available, skipping report.");
+    return;
+  }
+  if (!qbitaiData.items.length) {
+    console.log("  [qbitai] No recent articles, skipping report.");
+    return;
+  }
+
+  // Source articles are already Chinese — generate the body in Chinese
+  // directly instead of the usual EN-then-translate round trip.
+  console.log("  [qbitai] Calling LLM for QbitAI report (ZH)...");
+  try {
+    const body = await callLlm(buildQbitaiPrompt(qbitaiData, dateStr), LLM_TOKENS_LISTING);
+
+    for (const lang of LANGS) {
+      const fileName = lang === "en" ? "ai-cn-en.md" : "ai-cn.md";
+      const header =
+        lang === "en"
+          ? `# ${QBITAI_REPORT.title[lang]} ${dateStr}\n\n` +
+            `> Source: [QbitAI](https://www.qbitai.com/) (RSS) | ` +
+            `${qbitaiData.items.length} articles | Generated: ${utcStr} UTC\n\n` +
+            `---\n\n`
+          : `# ${QBITAI_REPORT.title[lang]} ${dateStr}\n\n` +
+            `> 数据来源: [量子位](https://www.qbitai.com/)（公众号同步 · RSS） | ` +
+            `共 ${qbitaiData.items.length} 篇 | 生成时间: ${utcStr} UTC\n\n` +
+            `---\n\n`;
+
+      const content = header + body + autoGenFooter(lang);
+
+      console.log(`  Saved ${saveFile(content, dateStr, fileName)}`);
+
+      if (digestRepo) {
+        const title = QBITAI_REPORT.issueTitle(dateStr, lang);
+        const label = ISSUE_LABELS.qbitai[lang];
+        const url = await createGitHubIssue(title, content, label);
+        console.log(`  Created qbitai issue (${lang}): ${url}`);
+      }
+    }
+  } catch (err) {
+    console.error(`  [qbitai] Report generation failed: ${err}`);
   }
 }

@@ -112,6 +112,12 @@ export const COMMUNITY_REPORT = {
     lang === "en" ? `💬 Tech Community AI Digest ${dateStr}` : `💬 技术社区 AI 动态日报 ${dateStr}`,
 } as const;
 
+export const QBITAI_REPORT = {
+  title: t("量子位 AI 资讯日报", "QbitAI Daily Digest"),
+  issueTitle: (dateStr: string, lang: Lang) =>
+    lang === "en" ? `🇨🇳 QbitAI Daily Digest ${dateStr}` : `🇨🇳 量子位 AI 资讯日报 ${dateStr}`,
+} as const;
+
 export const ISSUE_LABELS = {
   cli: t("digest", "digest-en"),
   openclaw: t("openclaw", "openclaw-en"),
@@ -123,6 +129,7 @@ export const ISSUE_LABELS = {
   arxiv: t("arxiv", "arxiv-en"),
   hf: t("hf", "hf-en"),
   community: t("community", "community-en"),
+  qbitai: t("qbitai", "qbitai-en"),
 } as const;
 
 export const CLI_ISSUE_TITLE = (dateStr: string, lang: Lang) =>
